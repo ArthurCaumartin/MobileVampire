@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class UIJoystickControler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerMoveHandler
+public class UIJoystickControler : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IPointerMoveHandler
 {
     [SerializeField] private RectTransform _joystick;
     [SerializeField] private RectTransform _joystickStick;
@@ -61,7 +61,7 @@ public class UIJoystickControler : MonoBehaviour, IPointerEnterHandler, IPointer
         else return Vector2.zero;
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void OnPointerDown(PointerEventData eventData)
     {
         EnableJoyStick(true, eventData.position);
     }
@@ -72,7 +72,7 @@ public class UIJoystickControler : MonoBehaviour, IPointerEnterHandler, IPointer
         MoveStick(eventData.position);
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void OnPointerUp(PointerEventData eventData)
     {
         EnableJoyStick(false);
     }

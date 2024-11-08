@@ -15,5 +15,4 @@ public class PlayerHealth : MonoBehaviour
     {
         _health.CurrentHealth -= value;
     }
-
 }

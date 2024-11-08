@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
 {
+    public CanvasManager instance;
     [SerializeField] private ScriptableHealth _playerHealth;
     [Space]
     [SerializeField] private Image _playerLifeBar;
